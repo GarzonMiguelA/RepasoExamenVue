@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
 import ListadoEjercicios from '@/components/menu/ListadoEjercicios.vue';
 import { getEmbalses } from '@/composables/getEmbalses.js';
 
@@ -29,11 +28,17 @@ onMounted(async () => {
     </thead>
     <tbody>
       <tr v-for="(item, index) in embalses" :key="index">
-        <!-- Usamos RouterLink para redirigir a la página de detalle con el nombre del embalse -->
-        <RouterLink :to="{ name: 'embalse', params: { estaci: item.estaci } }">
-          <td>{{ item.estaci }}</td> 
-        </RouterLink>
+        <td>
+          <RouterLink :to="{
+            name: 'embalse',
+            params: { estaci: encodeURIComponent(item.estaci) }
+          }">
+            {{ item.estaci }}
+          </RouterLink>
+        </td>
       </tr>
     </tbody>
   </table>
+
+  <router-view></router-view>
 </template>
