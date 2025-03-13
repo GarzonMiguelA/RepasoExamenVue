@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 
@@ -9,8 +8,10 @@
     <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/aigua">Aigua</RouterLink>
-        <RouterLink to="/ListaCompra">ListaCompra</RouterLink>
+        <RouterLink to="/compra">ListaCompra</RouterLink>
     </nav>
+
+    
 </template>
 
 <style scoped>
