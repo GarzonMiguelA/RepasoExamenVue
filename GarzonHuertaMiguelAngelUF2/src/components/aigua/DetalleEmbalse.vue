@@ -1,12 +1,12 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { getEmbalses } from '@/composables/getEmbalses.js'; // Añade la importación
 
 const route = useRoute();
 const embalseDetails = ref({});
 
-onMounted(async () => {
+const fetchEmbalseDetails = async () => {
   const data = await getEmbalses();
   const estaciDecoded = decodeURIComponent(route.params.estaci); // Decodifica el parámetro
   
@@ -15,7 +15,10 @@ onMounted(async () => {
   if (embalse) {
     embalseDetails.value = embalse;
   }
-});
+};
+
+onMounted(fetchEmbalseDetails);
+watch(() => route.params.estaci, fetchEmbalseDetails);
 </script>
 
 <template>

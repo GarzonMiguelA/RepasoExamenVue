@@ -17,7 +17,7 @@ const router = createRouter({
           path: ':estaci',  // Ruta dinámica
           name: 'embalse',
           component: () => import('../components/aigua/DetalleEmbalse.vue'),
-          props: true,  // Permite que el parámetro se pase como prop
+          props: route => ({estaci: parseInt(route.params.estaci)})  // Permite que el parámetro se pase como prop
         },
       ],
     },
