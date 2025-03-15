@@ -1,14 +1,20 @@
 <script setup>
-import ListadoEjerciciosView from '@/views/ListadoEjerciciosView.vue';
 import { ref, onMounted, watch } from 'vue';
 import { getUsers } from '@/composables/getUsers';
 
+// Definimos las props que recibimos del componente padre (id)
 const props = defineProps(['id']);
+
+// Creamos una variable reactiva para almacenar los datos del usuario
+// Inicialmente se inicializa con 'null' hasta que se carguen los datos
 const usuario = ref(null);
 
-// Función para obtener los datos del usuario según su ID
+// Funcion asincrona que obntiene la lista de usuarios y filtra el usuario que conicida con el id
 const fetchUser = async (id) => {
+    // Llamamos a la funcion getUsers que obtiene los datos del user
     const data = await getUsers();
+
+    // Buscamos en la lista del user cuyo id coincida con el ID que recibimos de las props
     usuario.value = data.find(user => user.id === id);
 };
 
@@ -24,13 +30,11 @@ watch(() => props.id, (newId) => {
 </script>
 
 <template>
-    <ListadoEjerciciosView />
-
     <div>
         <h1>Detalle usuario</h1>
     </div>
 
-    <!-- Solo mostramos la tabla si 'usuario' tiene un valor -->
+    <!-- Si usuario no es null, mostramos la tabla -->
     <table v-if="usuario">
         <thead>
             <tr>
@@ -43,6 +47,7 @@ watch(() => props.id, (newId) => {
         </thead>
         <tbody>
             <tr>
+                <!-- Mostramos los datos del usuario accediendo a las propiedades del JSON -->
                 <td>{{ usuario.id }}</td>
                 <td>{{ usuario.username }}</td>
                 <td>{{ usuario.email }}</td>
@@ -51,7 +56,4 @@ watch(() => props.id, (newId) => {
             </tr>
         </tbody>
     </table>
-
-    <!-- Si no hay usuario, mostramos un mensaje -->
-    <p v-else>Cargando usuario...</p>
 </template>
