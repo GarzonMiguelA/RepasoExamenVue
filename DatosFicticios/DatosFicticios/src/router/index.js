@@ -33,6 +33,11 @@ const router = createRouter({
           ]
         }
       ]
+    },
+    {
+      path: '/planetario',
+      name: 'planetario',
+      component: () => import('../components/planetario/PlanetarioComponent.vue'),
     }
   ],
 })

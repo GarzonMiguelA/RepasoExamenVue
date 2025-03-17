@@ -10,13 +10,7 @@ const addProducto = () => {
     producto.value = '';
 }
 
-const togglePrioritario = (index) => {
-    listaCompra.value[index].prioritario = !listaCompra.value[index].prioritario;
-}
 
-const toggleComprado = (index) => {
-    listaCompra.value[index].comprado = !listaCompra.value[index].comprado;
-}
 
 </script>
 
