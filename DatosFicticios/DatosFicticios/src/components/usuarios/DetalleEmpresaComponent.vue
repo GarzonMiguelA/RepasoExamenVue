@@ -21,6 +21,6 @@ onMounted(() => {
 <template>
   <h1>Empresa del usuario:</h1>
   <p>Nombre de la empresa: {{ company.name }}</p>
+  <p>Sitio Web: {{ company.catchPhrase }}</p>
   <p>Industria: {{ company.bs }}</p>
-  <p>Sitio Web: {{ company.website }}</p>
 </template>
