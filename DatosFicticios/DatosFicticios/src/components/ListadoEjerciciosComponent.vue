@@ -10,6 +10,8 @@ import { RouterLink } from 'vue-router'
       <RouterLink to="/usuarios">Usuarios</RouterLink>
     </nav>
   </div>
+
+  
 </template>
 
 <style scoped>

@@ -43,6 +43,8 @@ watch(() => props.id, (newId) => {
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Sitio Web</th>
+                <th>Direccion</th>
+                <th>Empresa</th>
             </tr>
         </thead>
         <tbody>
@@ -53,7 +55,12 @@ watch(() => props.id, (newId) => {
                 <td>{{ usuario.email }}</td>
                 <td>{{ usuario.phone }}</td>
                 <td>{{ usuario.website }}</td>
+                <td><RouterLink :to="`/usuarios/${usuario.id}/direccion`">Consultar</routerLink></td>
+                <td><RouterLink :to="`/usuarios/${usuario.id}/empresa`">Consultar</routerLink></td>
+
             </tr>
         </tbody>
     </table>
+
+    <router-view></router-view>
 </template>
