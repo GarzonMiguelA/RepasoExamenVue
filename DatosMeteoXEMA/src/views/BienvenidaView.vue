@@ -5,4 +5,5 @@ import BienvenidaComponent from '@/components/bienvenidaComponent.vue';
 
 <template>
    <BienvenidaComponent></BienvenidaComponent>
+   
 </template>

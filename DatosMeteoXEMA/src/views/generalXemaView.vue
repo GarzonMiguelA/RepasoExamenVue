@@ -6,5 +6,5 @@ import generalXEMAComponent from '@/components/datosXEMA/generalXEMAComponent.vu
 
 <template>
    <generalXEMAComponent></generalXEMAComponent>
-
+   
 </template>

@@ -5,4 +5,5 @@ import navComponent from '@/components/navComponent.vue';
 
 <template>
     <navComponent></navComponent>
+    
 </template>

@@ -1,6 +1,7 @@
 <script setup>
 import { getXema } from '@/composables/getXema';
 import { onMounted,ref } from 'vue';
+import { RouterLink } from 'vue-router'; // Importa RouterLink
 
 const datos = ref([]);
 
@@ -12,7 +13,7 @@ onMounted(async () => {
     );
 
     datos.value = datosFiltrados
-    console.log(datosFiltrados);
+
 });
 
 

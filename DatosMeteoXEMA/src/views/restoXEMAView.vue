@@ -5,4 +5,5 @@ import restoXEMAComponent from '@/components/datosXEMA/restoXEMAComponent.vue';
 
 <template>
     <restoXEMAComponent></restoXEMAComponent>
+    
 </template>

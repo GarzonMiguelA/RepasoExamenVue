@@ -6,8 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () =>  import ('../views/BienvenidaView.vue')
-      ,
+      component: () =>  import ('../views/BienvenidaView.vue'),
     },
     {
       path: '/datosMeteorologicos',
@@ -18,7 +17,8 @@ const router = createRouter({
           path: ':id',
           name: 'restoXEMA',
           component: () => import ('../views/restoXEMAView.vue'),
-          props: route => ({ id: route.params.id }) // No necesitas parseInt si el id no es un número
+          props: route => ({ id: route.params.id }), // No necesitas parseInt si el id no es un número
+          props: true
         }
       ]
     }
