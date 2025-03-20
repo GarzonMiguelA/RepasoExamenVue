@@ -12,7 +12,7 @@ onMounted(async () => {
         index === self.findIndex((t) => t.id === item.id)
     );
 
-    datos.value = datosFiltrados
+    datos.value = datosFiltrados;
 
 });
 

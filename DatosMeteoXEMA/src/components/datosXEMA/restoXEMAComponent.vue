@@ -29,6 +29,11 @@ console.log(props.id);
 
 
 <template>
+
+    <button>
+      <router-link to="/datosMeteorologicos">Volver</router-link>
+    </button>
+
     <h2>Resto de codigo</h2>
     <div v-if="datosXEMA">
       <p>Estas en estacion {{ datosXEMA.id }}</p>
