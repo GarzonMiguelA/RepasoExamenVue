@@ -5,7 +5,7 @@ import { getXema } from '@/composables/getXema';
 // Asegúrate de definir las props correctamente
 const props = defineProps(['id']);
 
-const datosXEMA = ref(null);
+const datosXEMA = ref([]);
 
 const fetchDatos = async () => {
     const data = await getXema();
@@ -35,13 +35,15 @@ console.log(props.id);
     </button>
 
     <h2>Resto de codigo</h2>
-    <div v-if="datosXEMA">
-      <p>Estas en estacion {{ datosXEMA.id }}</p>
+    <div>
+      <p>Estas en la estacion: {{ datosXEMA.id }}</p>
+      <p>Codigo de la estacion: {{datosXEMA.codi_estacio}}</p>
+      <p>Codigo variable de la estacion: {{ datosXEMA.codi_variable }}</p>
+      <p>Fecha de lectura: {{ datosXEMA.data_lectura }}</p>
+      <p>Valor de lectura: {{ datosXEMA.valor_lectura }}</p>
+      <p>Codigo del estado: {{ datosXEMA.codi_estat }}</p>
+      <p>Codigo de la base: {{ datosXEMA.codi_base }}</p>
     </div>
 
-    <div v-else>
-      <p>Cargando...</p>
-
-    </div>
     
 </template>
