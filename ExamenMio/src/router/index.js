@@ -23,8 +23,17 @@ const router = createRouter({
     {
       path: '/compra',
       name: 'compra',
-      component: () => import('../views/compra/listaCompraView.vue'),
-      
+      component: () => import('../views/compra/listaCompraView.vue'), 
+    },
+    {
+        path: '/registroUsers',
+        name: 'registroUsers',
+        component: () => import('../views/registroUsers/registroUsersView.vue'), 
+    },
+    {
+      path: '/calculadoraNotas',
+      name: 'calculadoraNotas',
+      component: () => import('../views/calculadoraNotas/calculadoraNotasView.vue'),
     }
   ],
 })
