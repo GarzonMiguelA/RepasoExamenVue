@@ -26,6 +26,11 @@ const router = createRouter({
       component: () => import('../views/compra/listaCompraView.vue'), 
     },
     {
+      path: '/compraNOMIO',
+      name: 'compraNOMIO',
+      component: () => import('../views/compra/listaCompraNOMIOView.vue'),
+    },
+    {
       path: '/registroUsers',
       name: 'registroUsers',
       component: () => import('../views/registroUsers/registroUsersView.vue'), 
