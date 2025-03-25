@@ -11,6 +11,7 @@ import { RouterLink } from 'vue-router';
             <RouterLink to="/compra">LlistaCompra</RouterLink>
             <RouterLink to="/registroUsers">Registro Usuarios</RouterLink>
             <RouterLink to="/calculadoraNotas">Calculadora de Notas</RouterLink>
+            <RouterLink to="/inventario">Inventario</RouterLink>
         </nav>
     </header>
 </template>

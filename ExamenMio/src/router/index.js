@@ -34,6 +34,19 @@ const router = createRouter({
       path: '/calculadoraNotas',
       name: 'calculadoraNotas',
       component: () => import('../views/calculadoraNotas/calculadoraNotasView.vue'),
+    },
+    {
+      path: '/inventario',
+      name: 'inventario',
+      component: () => import('../views/inventario/añadirComponenteView.vue'),
+      children: [
+        {
+          path: ':componentes',
+          name: 'listaInventario',
+          component: () => import('../views/inventario/listaComponenteView.vue'),
+          props: route => ({ componentes: route.params.componentes }),
+        }
+      ]
     }
   ],
 })
